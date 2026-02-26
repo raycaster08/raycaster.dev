@@ -1,0 +1,111 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-satoshi: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* --- Dark mode CSS variables --- */
+:root {
+  --color-bg: #f8f8f8;
+  --color-fg: #121212;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f0f0f0;
+  --color-border: rgba(0, 0, 0, 0.05);
+  --color-border-medium: rgba(0, 0, 0, 0.1);
+  --color-border-strong: rgba(0, 0, 0, 0.2);
+  --color-border-hover: rgba(0, 0, 0, 0.3);
+  --color-muted: rgba(0, 0, 0, 0.05);
+  --color-glass: rgba(255, 255, 255, 0.72);
+  --color-glass-dim: rgba(255, 255, 255, 0.58);
+  --color-glass-gradient-from: rgba(255, 255, 255, 0.55);
+  --color-glass-gradient-via: rgba(255, 255, 255, 0.25);
+  --color-glass-gradient-to: rgba(255, 255, 255, 0.18);
+  --color-glass-inner: rgba(255, 255, 255, 0.20);
+  --color-glass-btn: rgba(255, 255, 255, 0.55);
+  --color-glass-btn-shadow: rgba(255, 255, 255, 0.85);
+  --color-shadow: rgba(18, 18, 18, 0.10);
+  --color-shadow-dim: rgba(18, 18, 18, 0.06);
+  --color-selection-bg: #121212;
+  --color-selection-fg: #f8f8f8;
+  --color-about-bg: #121212;
+  --color-about-fg: #f8f8f8;
+  --color-about-img-bg: #27272a;
+  --color-ambient-glow: rgba(219, 234, 254, 0.2);
+}
+
+.dark {
+  --color-bg: #121212;
+  --color-fg: #f8f8f8;
+  --color-surface: #1e1e1e;
+  --color-surface-dim: #2a2a2a;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-medium: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.2);
+  --color-border-hover: rgba(255, 255, 255, 0.3);
+  --color-muted: rgba(255, 255, 255, 0.06);
+  --color-glass: rgba(30, 30, 30, 0.72);
+  --color-glass-dim: rgba(30, 30, 30, 0.58);
+  --color-glass-gradient-from: rgba(50, 50, 50, 0.55);
+  --color-glass-gradient-via: rgba(40, 40, 40, 0.25);
+  --color-glass-gradient-to: rgba(30, 30, 30, 0.18);
+  --color-glass-inner: rgba(255, 255, 255, 0.06);
+  --color-glass-btn: rgba(50, 50, 50, 0.55);
+  --color-glass-btn-shadow: rgba(255, 255, 255, 0.08);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-dim: rgba(0, 0, 0, 0.2);
+  --color-selection-bg: #f8f8f8;
+  --color-selection-fg: #121212;
+  --color-about-bg: #f8f8f8;
+  --color-about-fg: #121212;
+  --color-about-img-bg: #e4e4e7;
+  --color-ambient-glow: rgba(59, 130, 246, 0.15);
+}
+
+@layer base {
+  body {
+    @apply font-satoshi;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body ::selection {
+    background-color: var(--color-selection-bg);
+    color: var(--color-selection-fg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+.custom-cursor-ring {
+  @apply fixed top-0 left-0 w-10 h-10 pointer-events-none z-[9999] mix-blend-difference border border-white rounded-full flex items-center justify-center;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-cursor-dot {
+  @apply fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button {
+    cursor: none;
+  }
+}
+
+.markdown-code-syntax span {
+  background: transparent !important;
+}
