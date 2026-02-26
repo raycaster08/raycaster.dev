@@ -1,42 +1,74 @@
 "use client";
 
-import React, { useRef } from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import VariableProximity from '@/components/VariableProximity';
 import { ArrowUpRight } from 'lucide-react';
+
+const HoverSlideText = ({ text, className = '' }: { text: string; className?: string }) => {
+  const [hovered, setHovered] = useState(false);
+  const letters = text.split('');
+
+  return (
+    <motion.span
+      className={`inline-flex flex-wrap justify-center ${className}`}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+    >
+      {letters.map((letter, i) => (
+        <span
+          key={i}
+          className="inline-block overflow-hidden relative"
+          style={{ lineHeight: '1.1em', height: '1.1em' }}
+        >
+          <motion.span
+            className="inline-block"
+            animate={{ y: hovered ? '-100%' : '0%' }}
+            transition={{
+              duration: 0.35,
+              ease: [0.76, 0, 0.24, 1],
+              delay: i * 0.02,
+            }}
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </motion.span>
+          <motion.span
+            className="inline-block absolute left-0 top-full"
+            animate={{ y: hovered ? '-100%' : '0%' }}
+            transition={{
+              duration: 0.35,
+              ease: [0.76, 0, 0.24, 1],
+              delay: i * 0.02,
+            }}
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </motion.span>
+        </span>
+      ))}
+    </motion.span>
+  );
+};
 
 export const Footer = () => {
   const { t } = useLanguage();
-  const containerRef = useRef<HTMLElement>(null);
-  const proximityContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <footer ref={containerRef} id="contact" className="py-48 px-6 md:px-24 text-center bg-[var(--color-surface)] overflow-hidden">
+    <footer id="contact" className="pt-48 pb-24 px-6 md:px-24 text-center bg-[var(--color-surface)] overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
         <p className="text-xs uppercase tracking-[0.5em] mb-16 opacity-30 font-medium">{t.footer.getInTouch}</p>
-        <a 
-          href="mailto:hello@raycaster.dev" 
-          className="relative inline-block text-5xl md:text-[10vw] group"
+        <a
+          href="mailto:hello@raycaster.dev"
+          className="relative inline-block group"
         >
-          <div className="relative z-10 inline-block leading-relaxed">
-            <div ref={proximityContainerRef} className="inline-block">
-            <VariableProximity
-              label={t.footer.talk}
-              fromFontVariationSettings="'wght' 600, 'wdth' 100"
-              toFontVariationSettings="'wght' 900, 'wdth' 150"
-              containerRef={proximityContainerRef}
-              radius={300}
-              falloff="exponential"
-              className="inline-block"
-            />
-            </div>
-          </div>
+          <HoverSlideText
+            text={t.footer.talk}
+            className="text-5xl md:text-[10vw] font-black"
+          />
         </a>
       </motion.div>
       
