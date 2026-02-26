@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { CustomCursor } from "@/components/CustomCursor";
@@ -44,6 +45,7 @@ export default function RootLayout({
             {children}
             <BackgroundEffects />
           </div>
+          <Analytics />
         </Providers>
       </body>
     </html>
