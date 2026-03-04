@@ -29,7 +29,7 @@ export const Notes = () => {
   }, []);
 
   return (
-    <section id="notes" className="py-32 px-6 md:px-24 bg-[var(--color-surface-dim)]">
+    <section id="notes" className="py-32 px-6 md:px-24 bg-(--color-surface-dim)">
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">{t.notes.title}</h2>
@@ -51,7 +51,7 @@ export const Notes = () => {
             >
               <Link
                 href={`/notes/${note.slug}`}
-                className="group border-b border-[var(--color-border-medium)] pb-12 hover:border-[var(--color-border-hover)] transition-colors cursor-pointer block"
+                className="group border-b border-(--color-border-medium) pb-12 hover:border-(--color-border-hover) transition-colors cursor-pointer block"
               >
                 <div className="grid grid-cols-1 md:grid-cols-[180px_minmax(0,1fr)] gap-x-10 gap-y-4 items-start">
                   <div className="md:pt-2">

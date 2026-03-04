@@ -9,9 +9,9 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 export const About = () => {
   const { t } = useLanguage();
   return (
-    <section id="about" className="py-32 px-6 md:px-24 bg-[var(--color-about-bg)] text-[var(--color-about-fg)]">
+    <section id="about" className="py-32 px-6 md:px-24 bg-(--color-about-bg) text-(--color-about-fg)">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="aspect-[3/4] bg-[var(--color-about-img-bg)] overflow-hidden">
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="aspect-[3/4] bg-(--color-about-img-bg) overflow-hidden">
           <Image
             src="https://picsum.photos/seed/profile/800/1200"
             alt="Profile"

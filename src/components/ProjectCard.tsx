@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-[var(--color-surface-dim)] mb-6 rounded-2xl">
+      <div className="relative aspect-[16/10] overflow-hidden bg-(--color-surface-dim) mb-6 rounded-2xl">
         {isPhoneShotProject ? (
           <>
             <motion.div
@@ -281,13 +281,13 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
             className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-md border ${
               isExperimentalProject
                 ? 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300'
-                : 'border-[var(--color-border-medium)] bg-[var(--color-muted)] text-[var(--color-fg)] opacity-80'
+                : 'border-(--color-border-medium) bg-(--color-muted) text-(--color-fg) opacity-80'
             }`}
           >
             {isExperimentalProject ? 'Experiment' : 'Product'}
           </span>
           {project.tags.map((tag) => (
-            <span key={tag} className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 bg-[var(--color-muted)] rounded-md opacity-40">
+            <span key={tag} className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 bg-(--color-muted) rounded-md opacity-40">
               {tag}
             </span>
           ))}

@@ -40,7 +40,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <div className="relative overflow-hidden bg-[var(--color-bg)] text-[var(--color-fg)] font-['Satoshi',sans-serif]">
+          <div className="relative overflow-hidden bg-(--color-bg) text-(--color-fg) font-['Satoshi',sans-serif]">
             <CustomCursor />
             {children}
             <BackgroundEffects />

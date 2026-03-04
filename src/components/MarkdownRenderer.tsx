@@ -130,7 +130,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
           const videoExtensions = /\.(mp4|webm|mov|ogg)(\?.*)?$/i;
           if (href && videoExtensions.test(href)) {
             return (
-              <div className="my-8 rounded-xl overflow-hidden border border-[var(--color-border)]">
+              <div className="my-8 rounded-xl overflow-hidden border border-(--color-border)">
                 <video className="w-full" controls src={href}>
                   <a href={href} target="_blank" rel="noopener noreferrer">
                     {children}
@@ -144,7 +144,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-[var(--color-border-strong)] hover:decoration-[var(--color-fg)] transition-colors"
+              className="underline underline-offset-4 decoration-(--color-border-strong) hover:decoration-(--color-fg) transition-colors"
             >
               {children}
             </a>
@@ -161,7 +161,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
                 alt={alt ?? ''}
                 width={1200}
                 height={800}
-                className="w-full rounded-xl border border-[var(--color-border)]"
+                className="w-full rounded-xl border border-(--color-border)"
                 style={{ width: '100%', height: 'auto' }}
                 sizes="100vw"
                 unoptimized
@@ -181,8 +181,8 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
           if (match) {
             // Fenced code block with language
             return (
-              <div className="my-6 rounded-xl overflow-hidden border border-[var(--color-border)]">
-                <div className="flex items-center justify-between px-4 py-2 bg-[var(--color-surface-dim)] border-b border-[var(--color-border)]">
+              <div className="my-6 rounded-xl overflow-hidden border border-(--color-border)">
+                <div className="flex items-center justify-between px-4 py-2 bg-(--color-surface-dim) border-b border-(--color-border)">
                   <span className="text-[10px] font-mono uppercase tracking-widest opacity-40">{match[1]}</span>
                 </div>
                 <SyntaxHighlighter
@@ -206,7 +206,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
           // Inline code
           return (
             <code
-              className="px-1.5 py-0.5 rounded-md bg-[var(--color-surface-dim)] border border-[var(--color-border)] text-[0.85em] font-mono"
+              className="px-1.5 py-0.5 rounded-md bg-(--color-surface-dim) border border-(--color-border) text-[0.85em] font-mono"
               {...props}
             >
               {children}
@@ -228,23 +228,23 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
 
         // Blockquotes
         blockquote: ({ children }) => (
-          <blockquote className="my-6 pl-6 border-l-2 border-[var(--color-border-strong)] opacity-80 italic">
+          <blockquote className="my-6 pl-6 border-l-2 border-(--color-border-strong) opacity-80 italic">
             {children}
           </blockquote>
         ),
 
         // Tables
         table: ({ children }) => (
-          <div className="my-6 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+          <div className="my-6 overflow-x-auto rounded-xl border border-(--color-border)">
             <table className="w-full text-sm">{children}</table>
           </div>
         ),
         thead: ({ children }) => (
-          <thead className="bg-[var(--color-surface-dim)] text-left">{children}</thead>
+          <thead className="bg-(--color-surface-dim) text-left">{children}</thead>
         ),
         tbody: ({ children }) => <tbody>{children}</tbody>,
         tr: ({ children }) => (
-          <tr className="border-b border-[var(--color-border)] last:border-0">{children}</tr>
+          <tr className="border-b border-(--color-border) last:border-0">{children}</tr>
         ),
         th: ({ children }) => (
           <th className="px-4 py-3 font-semibold text-xs uppercase tracking-wider opacity-60">{children}</th>
@@ -254,11 +254,11 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) =
         ),
 
         // Horizontal rule
-        hr: () => <hr className="my-10 border-[var(--color-border)]" />,
+        hr: () => <hr className="my-10 border-(--color-border)" />,
 
         // Video elements (passed through by rehype-raw)
         video: ({ ...props }) => (
-          <div className="my-8 rounded-xl overflow-hidden border border-[var(--color-border)]">
+          <div className="my-8 rounded-xl overflow-hidden border border-(--color-border)">
             <video className="w-full" controls {...props} />
           </div>
         ),

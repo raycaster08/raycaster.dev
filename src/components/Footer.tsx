@@ -54,7 +54,7 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer id="contact" className="pt-48 pb-24 px-6 md:px-24 text-center bg-[var(--color-surface)] overflow-hidden">
+    <footer id="contact" className="pt-48 pb-24 px-6 md:px-24 text-center bg-(--color-surface) overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export const Footer = () => {
       >
         <p className="text-xs uppercase tracking-[0.5em] mb-16 opacity-30 font-medium">{t.footer.getInTouch}</p>
         <a
-          href="mailto:hello@raycaster.dev"
+          href="mailto:raycaster.dev@gmail.com"
           className="relative inline-block group"
         >
           <HoverSlideText
@@ -72,7 +72,7 @@ export const Footer = () => {
         </a>
       </motion.div>
       
-      <div className="mt-48 pt-12 border-t border-[var(--color-border)] flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-mono opacity-30 tracking-widest uppercase">
+      <div className="mt-48 pt-12 border-t border-(--color-border) flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-mono opacity-30 tracking-widest uppercase">
         <p>{t.footer.rights}</p>
         <div className="flex gap-12">
           <Link href="/legal/privacy" className="hover:opacity-100 transition-opacity">{t.footer.privacy}</Link>

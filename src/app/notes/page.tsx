@@ -75,10 +75,10 @@ export default function NotesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] pt-32 pb-20 px-6 md:px-24">
+    <div className="min-h-screen bg-(--color-bg) pt-32 pb-20 px-6 md:px-24">
       {/* Minimal nav bar for articles page */}
       <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-6 pt-4 md:pt-5">
-        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 bg-[var(--color-glass)] backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)] text-[var(--color-fg)]">
+        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 bg-(--color-glass) backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)] text-(--color-fg)">
           <Link 
             href="/"
             className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:opacity-50 transition-opacity"
@@ -136,7 +136,7 @@ export default function NotesPage() {
                   href={`/notes/${article.slug}`}
                   className="group cursor-pointer grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 items-start block"
                 >
-                  <div className="aspect-[4/3] overflow-hidden rounded-xl bg-[var(--color-surface-dim)]">
+                  <div className="aspect-[4/3] overflow-hidden rounded-xl bg-(--color-surface-dim)">
                     {article.cover && (
                       <Image
                         src={article.cover}
@@ -161,7 +161,7 @@ export default function NotesPage() {
                       {article.excerpt}
                     </p>
                     <div className="pt-2">
-                      <span className="text-xs font-bold uppercase tracking-widest border-b border-[var(--color-border-strong)] pb-1 group-hover:border-[var(--color-fg)] transition-colors">{t.notes.readArticle}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest border-b border-(--color-border-strong) pb-1 group-hover:border-(--color-fg) transition-colors">{t.notes.readArticle}</span>
                     </div>
                   </div>
                 </Link>
@@ -171,7 +171,7 @@ export default function NotesPage() {
         </div>
 
         {/* Pagination */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-[var(--color-border)]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-(--color-border)">
           <div className="text-xs font-mono opacity-40 uppercase tracking-widest">
             {t.notes.pageInfo
               .replace('{current}', currentPage.toString())
@@ -183,7 +183,7 @@ export default function NotesPage() {
             <button 
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] disabled:opacity-10 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-(--color-border) hover:bg-(--color-fg) hover:text-(--color-bg) disabled:opacity-10 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
               aria-label="Previous page"
             >
               <ChevronLeft size={18} />
@@ -199,8 +199,8 @@ export default function NotesPage() {
                       onClick={() => handlePageChange(page as number)}
                       className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${
                         currentPage === page 
-                          ? "bg-[var(--color-fg)] text-[var(--color-bg)] pointer-events-none" 
-                          : "hover:bg-[var(--color-muted)] opacity-40 hover:opacity-100"
+                          ? "bg-(--color-fg) text-(--color-bg) pointer-events-none" 
+                          : "hover:bg-(--color-muted) opacity-40 hover:opacity-100"
                       }`}
                     >
                       {page}
@@ -213,7 +213,7 @@ export default function NotesPage() {
             <button 
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:bg-[var(--color-fg)] hover:text-[var(--color-bg)] disabled:opacity-10 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-(--color-border) hover:bg-(--color-fg) hover:text-(--color-bg) disabled:opacity-10 disabled:hover:bg-transparent disabled:hover:text-current transition-all"
               aria-label="Next page"
             >
               <ChevronRight size={18} />

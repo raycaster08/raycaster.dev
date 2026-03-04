@@ -92,17 +92,17 @@ const CommentForm: React.FC<CommentFormProps> = ({ pageId, onCommentCreated, pla
           value={nickname}
           onChange={(e) => setNickname(e.target.value)}
           placeholder="Anonymous"
-          className="w-full bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl px-6 py-3 text-sm placeholder:text-lg placeholder:text-[var(--color-fg)] placeholder:opacity-40 outline-none focus:border-[var(--color-border-strong)] transition-colors mb-4"
+          className="w-full bg-(--color-surface) border border-(--color-border) rounded-xl px-6 py-3 text-sm placeholder:text-lg placeholder:text-(--color-fg) placeholder:opacity-40 outline-none focus:border-(--color-border-strong) transition-colors mb-4"
         />
         <textarea
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder={placeholder}
-          className="w-full bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 min-h-[120px] text-lg placeholder:text-[var(--color-fg)] placeholder:opacity-40 outline-none focus:border-[var(--color-border-strong)] focus:shadow-xl focus:shadow-[var(--color-shadow-dim)] transition-colors resize-none"
+          className="w-full bg-(--color-surface) border border-(--color-border) rounded-2xl p-6 min-h-[120px] text-lg placeholder:text-(--color-fg) placeholder:opacity-40 outline-none focus:border-(--color-border-strong) focus:shadow-xl focus:shadow-(--color-shadow-dim) transition-colors resize-none"
         />
         <button
           disabled={isSubmitting || !newComment.trim()}
-          className="absolute bottom-4 right-4 p-3 bg-[var(--color-fg)] text-[var(--color-bg)] rounded-full disabled:opacity-20 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-opacity"
+          className="absolute bottom-4 right-4 p-3 bg-(--color-fg) text-(--color-bg) rounded-full disabled:opacity-20 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-opacity"
         >
           {isSubmitting ? (
             <motion.div
@@ -181,11 +181,11 @@ export default function NoteDetailPage({ params }: { params: Promise<{ slug: str
   if (!note) return <div className="min-h-screen flex items-center justify-center">Article not found</div>;
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[var(--color-bg)] text-[var(--color-fg)]">
+    <div ref={containerRef} className="min-h-screen bg-(--color-bg) text-(--color-fg)">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-6 pt-4 md:pt-5">
         <div
-          className="mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 bg-[var(--color-glass)] backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)] text-[var(--color-fg)]"
+          className="mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 bg-(--color-glass) backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)] text-(--color-fg)"
         >
           <Link 
             href="/notes"
@@ -267,7 +267,7 @@ export default function NoteDetailPage({ params }: { params: Promise<{ slug: str
         </motion.article>
 
         {/* Comments Section */}
-        <section className="mt-32 pt-20 border-t border-[var(--color-border)]">
+        <section className="mt-32 pt-20 border-t border-(--color-border)">
           <div className="flex justify-between items-end mb-16">
             <h2 className="text-4xl font-bold tracking-tighter flex items-center gap-4">
               <MessageSquare size={28} className="opacity-60" />
@@ -291,7 +291,7 @@ export default function NoteDetailPage({ params }: { params: Promise<{ slug: str
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                  className="w-6 h-6 border-2 border-[var(--color-border)] border-t-[var(--color-fg)] rounded-full"
+                  className="w-6 h-6 border-2 border-(--color-border) border-t-(--color-fg) rounded-full"
                 />
               </div>
             ) : comments.length === 0 ? (
@@ -308,7 +308,7 @@ export default function NoteDetailPage({ params }: { params: Promise<{ slug: str
                     className="group"
                   >
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 shrink-0 rounded-full bg-[var(--color-surface-dim)] flex items-center justify-center opacity-60">
+                      <div className="w-10 h-10 shrink-0 rounded-full bg-(--color-surface-dim) flex items-center justify-center opacity-60">
                         <User size={20} />
                       </div>
                       <div>
@@ -330,7 +330,7 @@ export default function NoteDetailPage({ params }: { params: Promise<{ slug: str
       </main>
 
       {/* Footer */}
-      <footer className="py-20 px-6 border-t border-[var(--color-border)] text-center">
+      <footer className="py-20 px-6 border-t border-(--color-border) text-center">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-mono opacity-30 uppercase tracking-widest">
           <p>&copy; 2024 RAYCASTER.DEV</p>
           <div className="flex gap-8">

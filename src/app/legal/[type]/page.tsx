@@ -17,7 +17,7 @@ export default function LegalPage({ params }: { params: Promise<{ type: string }
   }, []);
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-fg)]">
+    <div className="min-h-screen bg-(--color-bg) text-(--color-fg)">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference text-white">
         <Link 
@@ -78,7 +78,7 @@ export default function LegalPage({ params }: { params: Promise<{ type: string }
       </main>
 
       {/* Footer */}
-      <footer className="py-20 px-6 border-t border-[var(--color-border)] text-center">
+      <footer className="py-20 px-6 border-t border-(--color-border) text-center">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-mono opacity-30 uppercase tracking-widest">
           <p>© 2024 RAYCASTER.DEV</p>
           <div className="flex gap-8">

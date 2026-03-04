@@ -40,15 +40,15 @@ export const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -14 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`relative mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 text-[var(--color-fg)] transition-all duration-500 ${
+          className={`relative mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 text-(--color-fg) transition-all duration-500 ${
             isScrolled
-              ? 'bg-[var(--color-glass)] backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)]'
-              : 'bg-[var(--color-glass-dim)] backdrop-blur-lg backdrop-saturate-110 shadow-[0_6px_20px_var(--color-shadow-dim)]'
+              ? 'bg-(--color-glass) backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)]'
+              : 'bg-(--color-glass-dim) backdrop-blur-lg backdrop-saturate-110 shadow-[0_6px_20px_var(--color-shadow-dim)]'
           }`}
         >
           <div className="pointer-events-none absolute inset-0 rounded-[20px] md:rounded-[24px] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-glass-gradient-from)] via-[var(--color-glass-gradient-via)] to-[var(--color-glass-gradient-to)]" />
-            <div className="absolute inset-[1px] rounded-[19px] md:rounded-[23px] bg-gradient-to-b from-[var(--color-glass-inner)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-(--color-glass-gradient-from) via-(--color-glass-gradient-via) to-(--color-glass-gradient-to)" />
+            <div className="absolute inset-[1px] rounded-[19px] md:rounded-[23px] bg-gradient-to-b from-(--color-glass-inner) to-transparent" />
           </div>
 
           <motion.div
@@ -109,13 +109,13 @@ export const Navbar = () => {
           <div className="relative flex md:hidden items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-glass-btn)] shadow-[inset_0_1px_0_var(--color-glass-btn-shadow)] backdrop-blur-md"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-(--color-glass-btn) shadow-[inset_0_1px_0_var(--color-glass-btn-shadow)] backdrop-blur-md"
               aria-label="Toggle dark mode"
             >
               {resolvedTheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-glass-btn)] shadow-[inset_0_1px_0_var(--color-glass-btn-shadow)] backdrop-blur-md"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-(--color-glass-btn) shadow-[inset_0_1px_0_var(--color-glass-btn-shadow)] backdrop-blur-md"
               onClick={() => setIsOpen(true)}
               aria-label="Open navigation menu"
             >
@@ -131,7 +131,7 @@ export const Navbar = () => {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            className="fixed inset-0 w-full h-screen bg-[var(--color-bg)] text-[var(--color-fg)] p-8 flex flex-col justify-center items-center gap-12 md:hidden z-[60]"
+            className="fixed inset-0 w-full h-screen bg-(--color-bg) text-(--color-fg) p-8 flex flex-col justify-center items-center gap-12 md:hidden z-[60]"
           >
             <button className="absolute top-8 right-6" onClick={() => setIsOpen(false)}><X size={32} /></button>
             <div className="flex flex-col items-center gap-8">
@@ -139,7 +139,7 @@ export const Navbar = () => {
                 <a key={item.id} href={`#${item.id}`} onClick={() => setIsOpen(false)} className="text-4xl font-bold tracking-tighter">{item.name}</a>
               ))}
             </div>
-            <div className="flex gap-8 pt-12 border-t border-[var(--color-border-medium)] w-full justify-center">
+            <div className="flex gap-8 pt-12 border-t border-(--color-border-medium) w-full justify-center">
               <button onClick={() => { setLanguage('en'); setIsOpen(false); }} className={`text-sm font-bold tracking-widest ${language === 'en' ? 'opacity-100' : 'opacity-40'}`}>ENGLISH</button>
               <button onClick={() => { setLanguage('zh'); setIsOpen(false); }} className={`text-sm font-bold tracking-widest ${language === 'zh' ? 'opacity-100' : 'opacity-40'}`}>中文</button>
             </div>
