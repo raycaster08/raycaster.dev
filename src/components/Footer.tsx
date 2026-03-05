@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { ArrowUpRight } from 'lucide-react';

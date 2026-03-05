@@ -82,17 +82,31 @@
 }
 
 .custom-cursor-ring {
-  @apply fixed top-0 left-0 w-10 h-10 pointer-events-none z-[9999] mix-blend-difference border border-white rounded-full flex items-center justify-center;
+  @apply fixed top-0 left-0 w-10 h-10 pointer-events-none z-9999 mix-blend-difference border border-white rounded-full flex items-center justify-center;
   transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
 }
 
 .custom-cursor-dot {
-  @apply fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference;
+  @apply fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-9999 mix-blend-difference;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 @media (pointer: fine) {

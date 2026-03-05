@@ -40,15 +40,15 @@ export const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -14 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`relative mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-[20px] md:rounded-[24px] px-4 md:px-6 py-3 md:py-4 text-(--color-fg) transition-all duration-500 ${
+          className={`relative mx-auto flex w-full max-w-360 items-center justify-between rounded-[20px] md:rounded-3xl px-4 md:px-6 py-3 md:py-4 text-(--color-fg) transition-all duration-500 ${
             isScrolled
               ? 'bg-(--color-glass) backdrop-blur-xl backdrop-saturate-125 shadow-[0_10px_28px_var(--color-shadow)]'
               : 'bg-(--color-glass-dim) backdrop-blur-lg backdrop-saturate-110 shadow-[0_6px_20px_var(--color-shadow-dim)]'
           }`}
         >
-          <div className="pointer-events-none absolute inset-0 rounded-[20px] md:rounded-[24px] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-(--color-glass-gradient-from) via-(--color-glass-gradient-via) to-(--color-glass-gradient-to)" />
-            <div className="absolute inset-[1px] rounded-[19px] md:rounded-[23px] bg-gradient-to-b from-(--color-glass-inner) to-transparent" />
+          <div className="pointer-events-none absolute inset-0 rounded-[20px] md:rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 bg-linear-to-b from-(--color-glass-gradient-from) via-(--color-glass-gradient-via) to-(--color-glass-gradient-to)" />
+            <div className="absolute inset-px rounded-[19px] md:rounded-[23px] bg-linear-to-b from-(--color-glass-inner) to-transparent" />
           </div>
 
           <motion.div
@@ -131,7 +131,7 @@ export const Navbar = () => {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            className="fixed inset-0 w-full h-screen bg-(--color-bg) text-(--color-fg) p-8 flex flex-col justify-center items-center gap-12 md:hidden z-[60]"
+            className="fixed inset-0 w-full h-screen bg-(--color-bg) text-(--color-fg) p-8 flex flex-col justify-center items-center gap-12 md:hidden z-60"
           >
             <button className="absolute top-8 right-6" onClick={() => setIsOpen(false)}><X size={32} /></button>
             <div className="flex flex-col items-center gap-8">

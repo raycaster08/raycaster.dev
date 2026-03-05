@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-(--color-surface-dim) mb-6 rounded-2xl">
+      <div className="relative aspect-16/10 overflow-hidden bg-(--color-surface-dim) mb-6 rounded-2xl">
         {isPhoneShotProject ? (
           <>
             <motion.div
@@ -58,7 +58,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
               className="absolute inset-0"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_30%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(circle_at_78%_68%,rgba(255,255,255,0.08),transparent_42%)]" />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/4 via-transparent to-black/20" />
+              <div className="absolute inset-0 bg-linear-to-br from-white/4 via-transparent to-black/20" />
             </motion.div>
             <MotionImage
               animate={{
@@ -90,12 +90,12 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                 referrerPolicy="no-referrer"
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/4 via-white/0 to-black/14" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/4 via-white/0 to-black/14" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08),rgba(255,255,255,0.02)_38%,transparent_68%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.12),rgba(255,255,255,0)_18%,rgba(255,255,255,0)_82%,rgba(255,255,255,0.08))]" />
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute left-[13%] top-[14%] h-[72%] w-[1px] bg-white/6" />
-              <div className="absolute right-[14%] bottom-[14%] h-[64%] w-[1px] bg-white/5" />
+              <div className="absolute left-[13%] top-[14%] h-[72%] w-px bg-white/6" />
+              <div className="absolute right-[14%] bottom-[14%] h-[64%] w-px bg-white/5" />
             </div>
             <div className="absolute inset-0 p-4 md:p-6">
               <motion.div
@@ -107,7 +107,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                   opacity: hasHoverImage ? 0.72 : 0.9,
                 }}
                 transition={{ duration: 0.45 }}
-                className="absolute left-[12%] top-[13%] h-[78%] md:h-[80%] aspect-[9/19.5] rounded-[18px] overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.28)]"
+                className="absolute left-[12%] top-[13%] h-[78%] md:h-[80%] aspect-9/19.5 rounded-[18px] overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.28)]"
               >
                 <MotionImage
                   src={project.hoverImage ?? project.image}
@@ -119,7 +119,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                   className="h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-black/18" />
+                <div className="absolute inset-0 bg-linear-to-b from-white/8 via-transparent to-black/18" />
               </motion.div>
 
               <motion.div
@@ -130,7 +130,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                   scale: isHovered ? 1.03 : 1,
                 }}
                 transition={{ duration: 0.45 }}
-                className="absolute right-[15%] top-[8%] h-[84%] md:h-[86%] aspect-[9/19.5] rounded-[20px] overflow-hidden border border-white/20 shadow-[0_28px_70px_rgba(0,0,0,0.34)]"
+                className="absolute right-[15%] top-[8%] h-[84%] md:h-[86%] aspect-9/19.5 rounded-[20px] overflow-hidden border border-white/20 shadow-[0_28px_70px_rgba(0,0,0,0.34)]"
               >
                 <MotionImage
                   src={project.image}
@@ -142,7 +142,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                   className="h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-linear-to-b from-white/10 via-transparent to-black/20" />
               </motion.div>
 
               <motion.div
@@ -166,7 +166,7 @@ export const ProjectCard: React.FC<{ project: NotionProject; onPlayClick: (proje
                   className="absolute inset-0 h-full w-full object-cover blur-2xl grayscale saturate-0"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/8 to-black/6" />
+                <div className="absolute inset-0 bg-linear-to-b from-white/20 via-white/8 to-black/6" />
                 <div className="absolute inset-0 p-3 md:p-4">
                   <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/30 bg-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]">
                     <MotionImage
